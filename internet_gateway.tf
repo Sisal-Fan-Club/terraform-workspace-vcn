@@ -21,7 +21,7 @@ resource "oci_core_route_table" "internet_gateway" {
   
   route_rules {
     
-    display_name = "Default route via Internet Gateway"
+    description = "Default route via Internet Gateway"
     network_entity_id = local.internet_gw.id
     destination = "0.0.0.0/0"
     destination_type = "CIDR_BLOCK"
