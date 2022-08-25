@@ -9,3 +9,9 @@ output "internet_gateway" {
   
   sensitive = true
 }
+
+output "dmz_route_table" {
+  value = local.dmz_route_table
+  
+  sensitive = true
+}
