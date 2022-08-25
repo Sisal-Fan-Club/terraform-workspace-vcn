@@ -1,5 +1,6 @@
 locals {
   internet_gw = oci_core_internet_gateway.internet_gateway
+  dmz_route_table = oci_core_route_table.internet_gateway
 }
 
 resource "oci_core_internet_gateway" "internet_gateway" {
