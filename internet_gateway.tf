@@ -12,3 +12,21 @@ resource "oci_core_internet_gateway" "internet_gateway" {
     sercurity-profile = "dmz"
   }, local.vcn.freeform_tags)
 }
+
+resource "oci_core_route_table" "internet_gateway" {
+  compartment_id = local.internet_gw.compartment_id
+  vcn_id = local.internet_gw.id
+  
+  display_name = local.internet_gw.display_name
+  
+  route_rules {
+    
+    display_name = "Default route via Internet Gateway"
+    network_entity_id = local.internet_gw.id
+    destination = "0.0.0.0/0"
+    destination_type = "CIDR_BLOCK"
+  }
+  
+  freeform_tags = merge({
+  }, local.internet_gw.freeform_tags)
+}
