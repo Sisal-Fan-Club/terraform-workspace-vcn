@@ -1,4 +1,5 @@
 locals {
+  vcn = oci_core_vcn.vcn
   root_compartment = local.tfe_workspace_outputs.root_compartment.root_compartment
 }
 
