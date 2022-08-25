@@ -10,5 +10,5 @@ resource "oci_core_internet_gateway" "internet_gateway" {
   
   freeform_tags = merge({
     sercurity-profile = "dmz"
-  }, loca.vcn.freeform_tags)
+  }, local.vcn.freeform_tags)
 }
