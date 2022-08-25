@@ -15,7 +15,7 @@ resource "oci_core_internet_gateway" "internet_gateway" {
 
 resource "oci_core_route_table" "internet_gateway" {
   compartment_id = local.internet_gw.compartment_id
-  vcn_id = local.internet_gw.id
+  vcn_id = local.internet_gw.vcn_id
   
   display_name = local.internet_gw.display_name
   
